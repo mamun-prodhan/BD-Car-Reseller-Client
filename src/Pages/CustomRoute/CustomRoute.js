@@ -16,6 +16,6 @@ const CustomRoute = () => {
             </div>
         </div>
     );
-};
+};  
 
 export default CustomRoute;

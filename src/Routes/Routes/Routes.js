@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs";
+import CarItems from "../../Pages/CarItems/CarItems/CarItems";
 import CustomRoute from "../../Pages/CustomRoute/CustomRoute";
-import CategoryItems from "../../Pages/Home/CategoryItems/CategoryItems";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 
@@ -20,9 +20,9 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: '/category/:id',
-                element: <CategoryItems></CategoryItems>,
-                // loader: ({params}) => fetch('car.json')
+                path: '/category/:categoryName',
+                element: <CarItems></CarItems>,
+                loader: ({params}) => fetch(`http://localhost:5000/category?categoryName=${params.categoryName}`)
             },
             {
                 path: '/blogs',

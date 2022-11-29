@@ -1,20 +1,17 @@
 [
     {
-        "_id": "1",
         "name": "Mamun Prodhan",
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fagLQ-s6gOVuY6Gv33wLVTRCy5U8bw27XXVZOFpICT3hpubHV4YFKrOYCusJ7NQPpow&usqp=CAU",
         "review": "Their car Service is very good. The product condition is extraordinary. I have brought some car form there and those car is so good. Their management is also goood. I will brought car from here again. Recommended for all",
         "location": "Dhaka"
     },
     {
-        "_id": "2",
         "name": "Shovon Kumar",
         "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQREc3q-BVkk9i9h1oTJscB5QKb4sL7MASVKP3XunXACBabNgc4SFNaD6yIfVFc5BsCWZI&usqp=CAU",
         "review": "Their car Service is very good. The product condition is extraordinary. I have brought some car form there and those car is so good. Their management is also goood. I will brought car from here again. Recommended for all",
         "location": "Khulna"
     },
     {
-        "_id": "3",
         "name": "Arjun Das",
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGzV-ZlB-JSZDJFi_IWjEcsNv5NkfYdswlLsDLUIaGvZOpbvjRDFvsoIPcnD_kev-VZPw&usqp=CAU",
         "review": "Their car Service is very good. The product condition is extraordinary. I have brought some car form there and those car is so good. Their management is also goood. I will brought car from here again. Recommended for all",

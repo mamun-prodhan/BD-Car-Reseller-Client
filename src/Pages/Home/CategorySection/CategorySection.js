@@ -6,7 +6,7 @@ const CategorySection = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() =>{
-        fetch('carCategory.json') //url of server side
+        fetch('http://localhost:5000/categories') //url of server side
         .then(res => res.json())
         .then(data => setCategories(data))
     },[])
@@ -20,7 +20,7 @@ const CategorySection = () => {
             <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     categories.map(category => <Category
-                    key={category.categoryId}
+                    key={category._id}
                     category={category}
                     ></Category>)
                 }

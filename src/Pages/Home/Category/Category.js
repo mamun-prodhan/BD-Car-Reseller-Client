@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Category = ({category}) => {
 
-    const { categoryId, categoryName, categoryImage, categoryDescription } = category;
+    const { _id, categoryId, categoryName, categoryImage, categoryDescription } = category;
 
 
     return (
@@ -15,7 +15,7 @@ const Category = ({category}) => {
                 <h2 className="card-title">{categoryName}</h2>
                 <p>{categoryDescription}</p>
                 <div className="card-actions">
-                    <Link to={`/category/${categoryId}`}><button className="btn btn-primary">Buy Now</button></Link>
+                    <Link to={`/category/${categoryName}`}><button className="btn btn-primary">Buy Now</button></Link>
                 </div>
             </div>
         </div>

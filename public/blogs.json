@@ -1,27 +1,23 @@
 [
     {
-        "_id": "1",
         "question": "What is the different ways to manage a state in a react Application",
         "answer1": "Every React component has a built-in state. This state is an object which stores the property values that belong to a component.",
         "answer2": "State is able to keep data from different components in-sync because each state update re-renders all relevant components. The built-in way that React provides for setting component states is by using setState() and adding “local state” to a class.",
         "answer3": "There are several other ways to manage state in React, including the use of: Hooks, React Context API, Apollo Link State."
     },
     {
-        "_id": "2",
         "question": "How does prototypical inheritance work.",
         "answer1": "Every object with its methods and properties contains an internal and hidden property known as Prototype.",
         "answer2": "The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.",
         "answer3": "Prototypical inheritance refers to the ability to access object properties from another object. We use a JavaScript prototype to add new properties and methods to an existing object constructor. We can then essentially tell our JS code to inherit properties from a prototype. Prototypical inheritance allows us to reuse the properties or methods from one JavaScript object to another through a reference pointer function."
     },
     {
-        "_id": "3",
         "question": "What is a unit test ? Why should we write unit tests ?",
         "answer1": "Unit testing is a software testing method where “units”—the individual components of software—are tested.",
         "answer2":"Developers write unit tests for their code to make sure that the code works correctly. This helps to detect and protect against bugs in the future. we should write unit text because Well-written unit tests act as documentation for your code.",
         "answer3":"Any developer can quickly look at your tests and know the purpose of your functions. It simplifies the debugging process. Unit testing is an integral part of extreme programming. Unit testing ensures that all code meets quality standards before it's deployed. This ensures a reliable engineering environment where quality is paramount. Over the course of the product development life cycle, unit testing saves time and money, and helps developers write better code, more efficiently."
     },
     {
-        "_id": "4",
         "question": "React VS Angular VS JavaScript ?",
         "answer1": "React is a JavaScript library developed by Facebook which allows you to build UI components. It facilitates the creation of interactive User Interfaces. It also makes the code easier to understand and launch. React Java Script framework uses server-side rendering to provide a flexible, performance-oriented solution. The main features of react are: Allows us to use 3rd party libraries, Time-Saving, Simplicity and Composable, Fully supported by Facebook,  Better user experience and very fast performance, Faster Development, Code Stability with One-directional data binding, React Components",
         "answer2": "Angular is a structural framework for developing dynamic web apps. It allows developers to use HTML as a template language and allows HTML syntax to express the application components briefly and clearly.It is a fully featured JavaScript framework that helps developing dynamic, single page web apps. It also supports the (MVC) programming structure. The main features of Angular are: Built-in support for AJAX, HTTP, and Observables, Large community support, Consistent with technology, Typescript offers efficiency, Cleaner and crisp Coding, Enhanced support for error handling, Seamless updates using Angular CLI, Forms and validation, Shadow DOM / local CSS, UI and Business Logic Separation",
