@@ -19,7 +19,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                element: <CategoryItems></CategoryItems>
+                element: <CategoryItems></CategoryItems>,
+                // loader: ({params}) => fetch('car.json')
             }
         ]
     }
