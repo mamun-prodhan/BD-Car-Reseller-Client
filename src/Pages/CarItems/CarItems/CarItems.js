@@ -25,6 +25,7 @@ const CarItems = () => {
             {selectedCar &&
                 <BookingModal
                     selectedCar={selectedCar}
+                    setSelectedCar={setSelectedCar}
                 ></BookingModal>}
         </div>
     );
