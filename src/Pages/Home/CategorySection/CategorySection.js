@@ -1,15 +1,21 @@
+import { useQueries, useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import Category from '../Category/Category';
 
 const CategorySection = () => {
+    // const [categories, setCategories] = useState([]);
 
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() =>{
-        fetch('http://localhost:5000/categories') //url of server side
+    const {data:categories = [], isloading} = useQuery({
+        queryKey: ['categories'],
+        queryFn: () =>fetch('http://localhost:5000/categories') //url of server side
         .then(res => res.json())
-        .then(data => setCategories(data))
-    },[])
+    })
+
+    // useEffect(() =>{
+    //     fetch('http://localhost:5000/categories') //url of server side
+    //     .then(res => res.json())
+    //     .then(data => setCategories(data))
+    // },[])
 
 
     return (

@@ -8,7 +8,7 @@ const SignUp = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const { createUser, updatedUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
 
     const [signUpError, setSignUpError] = useState();
 
@@ -23,9 +23,9 @@ const SignUp = () => {
                 const userInfo = {
                     displayName: data.name
                 }
-                updatedUser(userInfo)
-                    .then(() => { })
-                    .catch(err => console.log(err));
+                updateUser(userInfo)
+                .then(() =>{})
+                .catch(err => console.log(err))
             })
             .catch(err => {
                 console.log(err);

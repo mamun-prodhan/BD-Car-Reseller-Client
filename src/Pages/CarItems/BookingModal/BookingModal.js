@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({ selectedCar, setSelectedCar }) => {
 
     const { categoryId, categoryName, productName, productImage, resalePrice, originalPrice, yearOfPurchase, yearsOfUse, location, postedTime, sellersName, conditionType, mobileNumber, description } = selectedCar;
+
+    const {user} = useContext(AuthContext);
 
     const handleBooking = event =>{
         event.preventDefault();
@@ -38,11 +41,11 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
                         <label className="label">
                             <span className="label-text">Enter Your Name </span>
                         </label>
-                        <input name='name' type="text" placeholder="Your Name" className="input w-full input-bordered" />
+                        <input name='name' defaultValue={user?.displayName} disabled type="text" placeholder="Your Name" className="input w-full input-bordered" />
                         <label className="label">
                             <span className="label-text">Your Email</span>
                         </label>
-                        <input name='email' type="text" placeholder="Your Email" className="input w-full input-bordered" />
+                        <input name='email' defaultValue={user?.email} disabled type="text" placeholder="Your Email" className="input w-full input-bordered" />
                         <label className="label">
                             <span className="label-text">Product Name </span>
                         </label>
