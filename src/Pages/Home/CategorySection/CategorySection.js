@@ -8,14 +8,14 @@ const CategorySection = () => {
     const {data : categories = [], refetch, isLoading} = useQuery({
         queryKey: ['categories'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/categories');
+            const res = await fetch('https://asssignment-12-server.vercel.app/categories');
             const data = await res.json();
             return data
         }
         
         
         
-        // queryFn: () =>fetch('http://localhost:5000/categories') //url of server side
+        // queryFn: () =>fetch('https://asssignment-12-server.vercel.app/categories') //url of server side
         // .then(res => res.json())
     });
 

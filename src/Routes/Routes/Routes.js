@@ -29,8 +29,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/category/:categoryName',
-                element: <CarItems></CarItems>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category?categoryName=${params.categoryName}`)
+                element: <PrivateRoute><CarItems></CarItems></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://asssignment-12-server.vercel.app/category?categoryName=${params.categoryName}`)
             },
             {
                 path: '/blogs',

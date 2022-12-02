@@ -38,7 +38,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, role) =>{
         const user = {name, email, role};
-        fetch('http://localhost:5000/users', {
+        fetch('https://asssignment-12-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -95,8 +95,6 @@ const SignUp = () => {
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </form>
                 <p className='mt-3'>New to BD Car Reseller <Link className='text-primary' to="/login">Create new account</Link></p>
-                <div className="divider">OR</div>
-                <button className='btn btn-primary w-full'>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );
