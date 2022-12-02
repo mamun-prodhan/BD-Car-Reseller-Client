@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cars = ({ car, setSelectedCar }) => {
 
-    const { categoryId, categoryName, productName, productImage, resalePrice, originalPrice, yearOfPurchase, yearsOfUse, location, postedTime, sellersName, conditionType, mobileNumber, description } = car;
+    const { categoryId, categoryName, productName, productId, productImage, resalePrice, originalPrice, yearOfPurchase, yearsOfUse, location, postedTime, sellersName, conditionType, mobileNumber, description } = car;
 
     return (
         <div className="card bg-base-100 shadow-xl">

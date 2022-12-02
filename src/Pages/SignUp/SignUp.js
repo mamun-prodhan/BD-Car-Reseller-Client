@@ -20,13 +20,13 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast('User Created Successfully');
+                toast.success('User Created Successfully');
                 const userInfo = {
                     displayName: data.name
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        navigate('/');
+                        saveUser(data.name, data.email, data.role);
                      })
                     .catch(err => console.log(err))
             })
@@ -34,6 +34,22 @@ const SignUp = () => {
                 console.log(err);
                 setSignUpError(err.message);
             });
+    }
+
+    const saveUser = (name, email, role) =>{
+        const user = {name, email, role};
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log("saved user", data);
+            navigate('/');
+        })
     }
 
     return (

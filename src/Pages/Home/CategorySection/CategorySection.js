@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+import Loading from '../../Loading/Loading';
 import Category from '../Category/Category';
 
 const CategorySection = () => {
 
     // tanstack query
-    const {data : categories = []} = useQuery({
+    const {data : categories = [], refetch, isLoading} = useQuery({
         queryKey: ['categories'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/categories');
@@ -16,7 +17,11 @@ const CategorySection = () => {
         
         // queryFn: () =>fetch('http://localhost:5000/categories') //url of server side
         // .then(res => res.json())
-    })
+    });
+
+    if(isLoading){
+        return <Loading></Loading>
+    }
 
 
     return (

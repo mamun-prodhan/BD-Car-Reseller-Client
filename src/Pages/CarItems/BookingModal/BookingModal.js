@@ -4,7 +4,7 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({ selectedCar, setSelectedCar }) => {
 
-    const { _id ,categoryId, categoryName, productName, productImage, resalePrice, originalPrice, yearOfPurchase, yearsOfUse, location, postedTime, sellersName, conditionType, mobileNumber, description } = selectedCar;
+    const { categoryId, categoryName, productName, productId, productImage, resalePrice, originalPrice, yearOfPurchase, yearsOfUse, location, postedTime, sellersName, conditionType, mobileNumber, description } = selectedCar;
 
     const { user } = useContext(AuthContext);
 
@@ -23,7 +23,7 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
             name: name,
             email: email,
             productName: productName,
-            productId: _id,
+            productId: productId,
             resalePrice: resalePrice,
             phone: phone,
             meetingLocation: meetingLocation
@@ -37,12 +37,14 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
             },
             body: JSON.stringify(booking)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            setSelectedCar(null);
-            toast.success('Booking confirmed')
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    setSelectedCar(null);
+                    toast.success('Booking confirmed')
+                }
+            })
     }
 
     return (
@@ -68,7 +70,7 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
                         <label className="label">
                             <span className="label-text">Product Id</span>
                         </label>
-                        <input name='id' type="text" value={_id} disabled  className="input w-full input-bordered" />
+                        <input name='id' type="text" value={productId} disabled className="input w-full input-bordered" />
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -76,11 +78,11 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
                         <label className="label">
                             <span className="label-text">Phone</span>
                         </label>
-                        <input name='phone' type="text" placeholder="Phone" className="input w-full input-bordered" required/>
+                        <input name='phone' type="text" placeholder="Phone" className="input w-full input-bordered" required />
                         <label className="label">
                             <span className="label-text">Meeting Location</span>
                         </label>
-                        <input name='meetingLocation' type="text" placeholder="Meeting Location" className="input w-full input-bordered" required/>
+                        <input name='meetingLocation' type="text" placeholder="Meeting Location" className="input w-full input-bordered" required />
                         <input className='w-full btn btn-primary' type="submit" value="Order Now" />
                     </form>
                 </div>

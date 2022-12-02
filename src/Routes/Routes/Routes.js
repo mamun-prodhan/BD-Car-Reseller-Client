@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs";
 import CarItems from "../../Pages/CarItems/CarItems/CarItems";
 import CustomRoute from "../../Pages/CustomRoute/CustomRoute";
-import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        children:[
+        children: [
             {
                 path: '/',
                 element: <Home></Home>
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/category/:categoryName',
                 element: <CarItems></CarItems>,
-                loader: ({params}) => fetch(`http://localhost:5000/category?categoryName=${params.categoryName}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/category?categoryName=${params.categoryName}`)
             },
             {
                 path: '/blogs',
@@ -43,7 +44,13 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <MyOrders></MyOrders>
+            }
+        ]
     }
 ])
 
